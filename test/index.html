@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../src//utils/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ str }}</h1>
+      {{username}}
+      <button @click="handleToClick">按钮</button>
+      <input type="text" v-model="username" />
+    </div>
+  </body>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        str: '123',
+        arr: [1, 2, 3],
+        username: 'xxx',
+      },
+      methods: {
+        handleToClick(e) {
+          this.str = 'xxx'
+          console.log(e, this)
+        },
+      },
+      beforeCreate() {
+        // console.log('beforeCreate', this.$data, this.$el)
+      },
+      created() {
+        // console.log('created', this.$data, this.$el)
+      },
+      beforeMount() {
+        // console.log('beforeMount', this.$data, this.$el)
+      },
+      mounted() {
+        // console.log('mounted', this.$data, this.$el)
+      },
+    })
+  </script>
+</html>
